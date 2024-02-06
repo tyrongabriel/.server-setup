@@ -15,8 +15,14 @@ Before continuing it is advised to update the repositories and upgrade all packa
 sudo apt update && sudo apt upgrade
 ```
 
+# NeoVim
+You will have a better time with an actual editor, so install nvim using:
+```sh
+sudo apt install neovim
+```
+
 # ssh
-Configuring over SSH is probably preferrable.
+Configuring over SSH is probably preferrable, because you can copy paste a lot of stuff.
 ## Installation
 Install Openssh-Server and check its running status
 ```sh
@@ -36,6 +42,12 @@ ssh-copy-id -i ~/.ssh/id_ed25519.pub username@serveraddress
 Optionally you can edit the ```~/.ssh/authorized_keys``` file and add your public key there.
 
 ## Configuring ssh
+This step should probable be done after the git configuration!
+Clone this repository:
+```sh
+git clone git@github.com:tyrongabriel/.server-setup.git ~/.server-setup
+```
+
 To copy the ssh configuration, copy the file from this repository:
 ```sh
 sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak # Create a backup of the existing config
@@ -43,13 +55,6 @@ sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak # Create a backup of the e
 sudo cp <path_to_repo>/ssh/sshd_config /etc/ssh/sshd_config # Copy config from repo to system
 ```
 This should block root login, change default port to 22022 and more.
-
-
-# NeoVim
-You will have a better time with an actual editor, so install nvim using:
-```sh
-sudo apt install neovim
-```
 
 # Git
 To use the scripts in this repository, you will need to be able to use git!
@@ -74,3 +79,13 @@ Add the output of
 cat ~/.ssh/id_ed25519.pub
 ```
 to your git account (be sure to add a linebreak at the end!)
+
+# Dotfiles
+Now you should have set up git and ssh correctly, now you can clone your dotfiles repository and get the configuration for all the optional tools you use!
+Clone the repo:
+```sh
+git clone git@github.com:tyrongabriel/.dotfiles.git ~/.dotfiles
+```
+Follow the dotfile installation for any further steps!
+
+
