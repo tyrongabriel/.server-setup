@@ -52,7 +52,9 @@ To copy the ssh configuration, copy the file from this repository:
 ```sh
 sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak # Create a backup of the existing config
 # IMPORTANT: BE SURE TO HAVE A VALID SSH-KEY ADDED, OTHERWISE YOU WILL BE LOCKED OUT!
+# Also, check firewall settings beforehand to allow the new ssh port
 sudo cp <path_to_repo>/ssh/sshd_config /etc/ssh/sshd_config # Copy config from repo to system
+sudo systemctl reload sshd # Reload ssh config
 ```
 This should block root login, change default port to 22022 and more.
 
