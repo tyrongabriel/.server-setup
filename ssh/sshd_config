@@ -1,0 +1,33 @@
+# SSH Configuration
+Include /etc/ssh/sshd_config.d/*.conf # Add further configs
+
+## Authentication
+PubkeyAuthentication yes
+PasswordAuthentication no
+PermitRootLogin no
+## uncomment to restrict to only certain users
+#AllowUsers tyron
+
+## Networking
+Port 22022 #22 # Change from default for extra security
+
+## Protocol
+Protocol 2
+
+## Idle Connections
+ClientAliveInterval 600 # 10min
+ClientAliveCountMax 5
+
+## Rate-Limiting/Spam Protection
+MaxAuthTries 5
+LoginGraceTime 30
+MaxStartups 10:50:20 # After 10 Connections, drop 50%, after 20, drop all
+
+# Default Settings carried over
+KbdInteractiveAuthentication no
+UsePAM no
+X11Forwarding yes
+PrintMotd no
+AcceptEnv LANG LC_* # Allows client to pass env variables
+Subsystem sftp /usr/lib/openssh/sftp-server # overrides default of none
+
