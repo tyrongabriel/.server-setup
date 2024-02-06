@@ -88,4 +88,7 @@ git clone git@github.com:tyrongabriel/.dotfiles.git ~/.dotfiles
 ```
 Follow the dotfile installation for any further steps!
 
+# Other services
+In this repository, there are more services, such as docker, portainer etc. with installation scripts you can run.
+Some of these may be incomplete and/or be broken, use with caution!
 
