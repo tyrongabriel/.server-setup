@@ -34,7 +34,7 @@ On the client machines, generate keys:
 ssh-keygen -t ed25519 -C "<email>"
 ```
 You would probably use your github mail here, because your client will use github: ```51530686+tyrongabriel@users.noreply.github.com```
-You can optionally add a passphrase for additional security.
+
 Add the key to the server using:
 ```sh
 ssh-copy-id -i ~/.ssh/id_ed25519.pub username@serveraddress
